@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iron Dome</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start; /* push everything to the left */
+      align-items: center;         /* vertical centering */
+      background: url('mesh.png') no-repeat center center fixed;
+      background-size: cover; /* fill screen with background */
+	  font-family: FreeMono, monospace;
+    text-align: center;
+    }
+
+    .model-container {
+      width: 500px;              
+      height: 500px;             
+      border: 5px solid #333;    
+      border-radius: 30px;       
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2A3439;
+      margin-left: 40px; /* space from the left edge */
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Space for info on the right */
+    .info {
+      flex: 1;
+      padding: 40px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Left: model -->
+  <div class="model-container">
+    <model-viewer
+      src="model.glb"
+      alt="3D Model"
+      auto-rotate
+      rotation-per-second="20deg"
+      camera-controls
+      interaction-prompt="auto"
+      disable-pan>
+    </model-viewer>
+  </div>
+
+  <!-- Right: info text -->
+  <div class="info">
+    <h1>Iron Dome</h1>
+    <p>Iron Dome is an Israeli mobile all-weather air defense system,[8] developed by Rafael Advanced Defense Systems and Israel Aerospace Industries. The system is designed to intercept and destroy short-range rockets and artillery shells fired from distances of 4 to 70 kilometres (2–43 mi) away and whose trajectory would take them to an Israeli populated area</p>
+  </div>
+</body>
+</html>
